@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const mongoose = require('mongoose');
-// const User = mongoose.model('User');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -10,8 +7,5 @@ router.get('/', function(req, res, next) {
     message: "GET /api/users"
   });
 });
-
-
-
 
 module.exports = router;
