@@ -7,3 +7,26 @@ input[type=textarea] {
   .tweet-preview {
     min-height: 150px;
   }
+
+  label {
+    display: block;
+    margin-top: 5px;
+  }
+
+  input[type=file] {
+    margin-left: 5px;
+  }
+
+
+  .tweet {
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    min-height: 58px;
+  }
+
+  .profile-image {
+    height: 18px;
+    margin-right: 5px;
+    margin-left: 2px;
+  }

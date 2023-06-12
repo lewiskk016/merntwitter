@@ -4,6 +4,7 @@ import './SessionForm.css';
 import { signup, clearSessionErrors } from '../../store/session';
 
 function SignupForm () {
+  const [image, setImage] = useState(null);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -45,11 +46,15 @@ function SignupForm () {
     const user = {
       email,
       username,
+      image,
       password
     };
 
     dispatch(signup(user));
   }
+  
+  const updateFile = e => setImage(e.target.files[0]);
+
 
   return (
     <form className="session-form" onSubmit={handleSubmit}>
@@ -91,6 +96,10 @@ function SignupForm () {
           onChange={update('password2')}
           placeholder="Confirm Password"
         />
+      </label>
+      <label>
+        Profile Image
+        <input type="file" accept=".jpg, .jpeg, .png" onChange={updateFile} />
       </label>
       <input
         type="submit"
