@@ -1,27 +1,13 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearTweetErrors, fetchTweets } from '../../store/tweets';
-import TweetBox from './TweetBox';
+import "./TweetBox.css"
 
-function Tweets () {
-  const dispatch = useDispatch();
-  const tweets = useSelector(state => Object.values(state.tweets.all));
-
-  useEffect(() => {
-    dispatch(fetchTweets());
-    return () => dispatch(clearTweetErrors());
-  }, [dispatch])
-
-  if (tweets.length === 0) return <div>There are no Tweets</div>;
-
+function TweetBox ({ tweet: { text, author }}) {
+  const { username } = author;
   return (
-    <>
-      <h2>All Tweets</h2>
-      {tweets.map(tweet => (
-        <TweetBox key={tweet._id} tweet={tweet} />
-      ))}
-    </>
+    <div className="tweet">
+      <h3>{username}</h3>
+      <p>{text}</p>
+    </div>
   );
 }
 
-export default Tweets;
+export default TweetBox;

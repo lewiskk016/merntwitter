@@ -1,14 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
-import errorsReducer from './errors';
-import tweetsReducer from './tweets';
-
+import errors from './errors';
+import tweets from './tweets';
 
 const rootReducer = combineReducers({
-session,
-errors: errorsReducer,
-tweets: tweetsReducer
+  tweets,
+  session,
+  errors
 });
 
 let enhancer;
@@ -27,3 +26,4 @@ const configureStore = (preloadedState) => {
 };
 
 export default configureStore;
+

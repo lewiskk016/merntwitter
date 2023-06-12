@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import './NavBar.css';
 import { logout } from '../../store/session';
 
 function NavBar () {
@@ -33,7 +34,7 @@ function NavBar () {
 
   return (
     <>
-      <h1>Chirper</h1>
+      <h1>MERN Twitter</h1>
       { getLinks() }
     </>
   );
